@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>GemPoint Email Signatures</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
+<style>
+/* Builder: details form on the left, live signature previews on white "email" cards on the right; stacks on phones */
+:root{
+  --bg:#FAFAF7; --surface:#FFFFFF; --ink:#10244A; --muted:#4B5B76; --line:#DCE2EA; --tint:#ECF8F2;
+  --accent:#0A7B57; --accent-deep:#075F43; --on-accent:#FFFFFF; --warn:#A54C08; --warn-soft:#FBEBDD;
+  --mail:#FFFFFF; --mail-line:#DCE2EA;
+  --display:"Source Serif 4", Georgia, serif; --body:Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B1A33; --surface:#12254A; --ink:#EEF2F8; --muted:#A8B5CB; --line:#263B63; --tint:#10302F;
+  --accent:#3CC08E; --accent-deep:#6FD1A9; --on-accent:#0B1A33; --warn:#F5A524; --warn-soft:#3A2A12;
+  --mail:#FFFFFF; --mail-line:#263B63; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B1A33; --surface:#12254A; --ink:#EEF2F8; --muted:#A8B5CB; --line:#263B63; --tint:#10302F;
+  --accent:#3CC08E; --accent-deep:#6FD1A9; --on-accent:#0B1A33; --warn:#F5A524; --warn-soft:#3A2A12;
+  --mail:#FFFFFF; --mail-line:#263B63; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:28px}
+header{display:flex;flex-direction:column;gap:8px;padding-bottom:20px;border-bottom:2px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1,h2{margin:0;font-family:var(--display);font-weight:600;text-wrap:balance;line-height:1.15}
+h1{font-size:clamp(1.9rem,4.5vw,2.6rem)} h2{font-size:1.35rem}
+p{margin:0}
+.muted{color:var(--muted)}
+.layout{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+.form{flex:1 1 320px;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:14px}
+.previews{flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:24px}
+label.f{display:flex;flex-direction:column;gap:5px;font-weight:600;font-size:.9rem}
+input[type=text],select{font:inherit;font-weight:400;padding:10px 12px;border:1.5px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);width:100%;min-height:44px}
+input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.hint{font-size:.82rem;color:var(--muted);font-weight:400}
+.seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.seg button{font:inherit;font-size:.88rem;font-weight:600;padding:10px 6px;border:1.5px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);cursor:pointer;min-height:44px}
+.seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.cardhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.mail{background:var(--mail);border:1px solid var(--mail-line);border-radius:4px;padding:22px;overflow-x:auto}
+.mail .fake{font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#4B5B76;margin-bottom:16px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{font:inherit;font-weight:600;font-size:.95rem;background:var(--accent);color:var(--on-accent);border:0;border-radius:8px;padding:11px 18px;cursor:pointer;min-height:44px}
+.btn:hover{background:var(--accent-deep)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.toast{font-size:.88rem;color:var(--accent);min-height:1.3em}
+.code{width:100%;min-height:140px;font:12px/1.45 ui-monospace,Menlo,Consolas,monospace;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:4px;padding:10px}
+.steps{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.note{background:var(--warn-soft);color:var(--ink);border-radius:4px;padding:12px 14px;font-size:.9rem}
+.note b{color:var(--warn)}
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.howto .card h3{margin:0;font-size:1rem}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="eyebrow">GemPoint Advisors · Brand tools</span>
+  <h1>Email signatures</h1>
+  <p class="muted">Fill in your details, pick your practice, then copy the signature into Gmail or Outlook.</p>
+</header>
+
+<div class="layout">
+  <form class="form" id="form" novalidate>
+    <h2>Your details</h2>
+    <label class="f" for="f-name">Full name<input type="text" id="f-name" autocomplete="name" placeholder="Your Name"></label>
+    <label class="f" for="f-title">Title<input type="text" id="f-title" placeholder="Managing Partner"></label>
+    <div class="f" style="display:flex;flex-direction:column;gap:5px;font-weight:600;font-size:.9rem">Practice
+      <div class="seg" role="group" aria-label="Practice">
+        <button type="button" id="p-adv" data-p="adv" aria-pressed="true">Advisors</button>
+        <button type="button" id="p-sales" data-p="sales" aria-pressed="false">Sales</button>
+        <button type="button" id="p-tech" data-p="tech" aria-pressed="false">Technology</button>
+      </div>
+      <span class="hint">Use Advisors unless your work is with one practice only.</span>
+    </div>
+    <label class="f" for="f-phone">Phone<input type="text" id="f-phone" inputmode="tel" autocomplete="tel" placeholder="(864) 555-0100"></label>
+    <label class="f" for="f-email">Email<input type="text" id="f-email" inputmode="email" autocomplete="email" placeholder="you@gempointadvisors.com"></label>
+    <label class="f" for="f-web">Website<input type="text" id="f-web" placeholder="gempointadvisors.com" value="gempointadvisors.com"></label>
+    <label class="f" for="f-book">Booking link (optional)<input type="text" id="f-book" placeholder="calendly.com/your-link"><span class="hint">Adds a “Book a call” link.</span></label>
+    <label class="f" for="f-logo">Logo web address (optional)<input type="text" id="f-logo" placeholder="https://gempointadvisors.com/logo-signature.png"><span class="hint">Once the logo is on your website, paste its address so it shows in every email.</span></label>
+  </form>
+
+  <div class="previews">
+    <section class="card" aria-labelledby="full-h">
+      <div class="cardhead"><h2 id="full-h">Full signature</h2><span class="hint">For new emails</span></div>
+      <div class="mail"><p class="fake">Thanks, and talk soon.</p><div id="sig-full"></div></div>
+      <div class="row"><button class="btn" type="button" id="copy-full">Copy signature</button><button class="btn ghost" type="button" id="code-full">Show HTML</button><span class="toast" id="t-full" role="status"></span></div>
+      <textarea class="code" id="html-full" readonly hidden aria-label="Full signature HTML"></textarea>
+    </section>
+    <section class="card" aria-labelledby="short-h">
+      <div class="cardhead"><h2 id="short-h">Short signature</h2><span class="hint">For replies and forwards</span></div>
+      <div class="mail"><p class="fake">Sounds good, see you Tuesday.</p><div id="sig-short"></div></div>
+      <div class="row"><button class="btn" type="button" id="copy-short">Copy signature</button><button class="btn ghost" type="button" id="code-short">Show HTML</button><span class="toast" id="t-short" role="status"></span></div>
+      <textarea class="code" id="html-short" readonly hidden aria-label="Short signature HTML"></textarea>
+    </section>
+    <p class="note" id="lognote"><b>About the logo:</b> until you add a logo web address, the logo is built into the signature. Outlook and Apple Mail keep it when you paste. Gmail usually drops it, so in Gmail use the image button in the signature editor to insert the logo file instead.</p>
+  </div>
+</div>
+
+<section class="howto" aria-label="How to install">
+  <div class="card"><h3>Gmail</h3><ol class="steps"><li>Click Copy signature.</li><li>Gmail → Settings (gear) → See all settings → General → Signature → Create new.</li><li>Paste, then Save Changes at the bottom of the page.</li><li>If the logo is missing, place the cursor above your name and use the image button to insert the logo file.</li></ol></div>
+  <div class="card"><h3>Outlook</h3><ol class="steps"><li>Click Copy signature.</li><li>Outlook → Settings → Mail → Compose and reply (new Outlook), or File → Options → Mail → Signatures (classic).</li><li>Create a new signature, paste, and save.</li><li>Set it as the default for new messages; use the short one for replies.</li></ol></div>
+  <div class="card"><h3>Apple Mail</h3><ol class="steps"><li>Click Copy signature.</li><li>Mail → Settings → Signatures → +.</li><li>Untick “Always match my default message font”, then paste into the right-hand box.</li></ol></div>
+</section>
+</div>
+
+<script>
+const LOGOS = {adv:"https://gempointadvisors.com/assets/email/gempoint-advisors-signature.png", sales:"https://gempointadvisors.com/assets/email/gempoint-sales-signature.png", tech:"https://gempointadvisors.com/assets/email/gempoint-technology-signature.png"};
+const PRACTICE = {
+  adv:{label:"GemPoint Advisors", color:"#0A7B57"},
+  sales:{label:"GemPoint Sales", color:"#0A7B57"},
+  tech:{label:"GemPoint Technology", color:"#2F5E9E"}
+};
+let practice = "adv";
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const urlify = u => !u ? "" : /^https?:\/\//i.test(u) ? u : "https://" + u.replace(/^\/+/, "");
+const bare = u => u.replace(/^https?:\/\//i,"").replace(/\/$/,"");
+
+function vals(){
+  const v = id => $(id).value.trim();
+  return {name:v("f-name")||"Your Name", title:v("f-title")||"Managing Partner", phone:v("f-phone"), email:v("f-email"),
+          web:v("f-web"), book:v("f-book"), logo:v("f-logo")};
+}
+const F = "font-family:Arial,Helvetica,sans-serif;";
+function contactLines(d, col){
+  const L = [];
+  if(d.phone) L.push(`<a href="tel:${esc(d.phone.replace(/[^\d+]/g,""))}" style="${F}color:#10244A;text-decoration:none;">${esc(d.phone)}</a>`);
+  if(d.email) L.push(`<a href="mailto:${esc(d.email)}" style="${F}color:#10244A;text-decoration:none;">${esc(d.email)}</a>`);
+  if(d.web) L.push(`<a href="${esc(urlify(d.web))}" style="${F}color:${col};text-decoration:none;font-weight:bold;">${esc(bare(d.web))}</a>`);
+  return L;
+}
+function fullSig(){
+  const d = vals(), p = PRACTICE[practice], src = d.logo ? urlify(d.logo) : LOGOS[practice];
+  const lines = contactLines(d, p.color);
+  const book = d.book ? `<tr><td style="padding-top:10px;"><a href="${esc(urlify(d.book))}" style="${F}font-size:13px;font-weight:bold;color:#FFFFFF;background:${p.color};text-decoration:none;padding:6px 12px;border-radius:4px;display:inline-block;">Book a call</a></td></tr>` : "";
+  return `<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;${F}">
+<tr><td style="padding:0 0 10px 0;"><span style="${F}font-size:16px;font-weight:bold;color:#10244A;">${esc(d.name)}</span><br><span style="${F}font-size:13px;color:#4B5B76;">${esc(d.title)}, ${esc(p.label)}</span></td></tr>
+<tr><td style="border-top:2px solid ${p.color};padding:12px 0 0 0;">
+<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;"><tr>
+<td style="vertical-align:middle;padding-right:16px;"><img src="${esc(src)}" width="190" height="45" alt="${esc(p.label)}" style="display:block;width:190px;height:45px;border:0;"></td>
+<td style="vertical-align:middle;border-left:1px solid #DCE2EA;padding-left:16px;${F}font-size:13px;line-height:20px;color:#10244A;">${lines.join("<br>") || `<span style="color:#4B5B76;">Add your phone and email</span>`}</td>
+</tr></table></td></tr>${book}
+</table>`;
+}
+function shortSig(){
+  const d = vals(), p = PRACTICE[practice];
+  const bits = [d.phone ? `<a href="tel:${esc(d.phone.replace(/[^\d+]/g,""))}" style="${F}color:#4B5B76;text-decoration:none;">${esc(d.phone)}</a>` : "",
+                d.web ? `<a href="${esc(urlify(d.web))}" style="${F}color:${p.color};text-decoration:none;font-weight:bold;">${esc(bare(d.web))}</a>` : ""].filter(Boolean);
+  return `<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;${F}"><tr>
+<td style="${F}font-size:13px;line-height:19px;color:#10244A;"><span style="font-weight:bold;">${esc(d.name)}</span> <span style="color:#4B5B76;">· ${esc(p.label)}</span>${bits.length?`<br>${bits.join(`<span style="color:#A8B5CB;"> | </span>`)}`:""}</td>
+</tr></table>`;
+}
+function render(){
+  $("sig-full").innerHTML = fullSig(); $("sig-short").innerHTML = shortSig();
+  if(!$("html-full").hidden) $("html-full").value = fullSig();
+  if(!$("html-short").hidden) $("html-short").value = shortSig();
+  $("lognote").hidden = true;
+}
+async function copyRich(html, node, toast){
+  const t = $(toast);
+  try{
+    if(window.ClipboardItem && navigator.clipboard && navigator.clipboard.write){
+      const plain = node.innerText;
+      await navigator.clipboard.write([new ClipboardItem({"text/html":new Blob([html],{type:"text/html"}),"text/plain":new Blob([plain],{type:"text/plain"})})]);
+      t.textContent = "Copied. Paste it into your email settings."; return;
+    }
+    throw 0;
+  }catch(e){
+    try{
+      const r = document.createRange(); r.selectNodeContents(node);
+      const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+      const ok = document.execCommand && document.execCommand("copy");
+      t.textContent = ok ? "Copied. Paste it into your email settings." : "Selected. Press Ctrl+C (or ⌘C) to copy.";
+    }catch(x){ t.textContent = "Select the signature and copy it with Ctrl+C (or ⌘C)."; }
+  }
+}
+function toggleCode(btn, area, make){
+  const a = $(area);
+  a.hidden = !a.hidden; $(btn).textContent = a.hidden ? "Show HTML" : "Hide HTML";
+  if(!a.hidden){ a.value = make(); a.focus(); a.select(); }
+}
+document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",()=>{
+  practice = b.dataset.p;
+  document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed", x===b));
+  render();
+}));
+$("form").addEventListener("input", render);
+$("form").addEventListener("submit", e=>e.preventDefault());
+$("copy-full").addEventListener("click",()=>copyRich(fullSig(), $("sig-full"), "t-full"));
+$("copy-short").addEventListener("click",()=>copyRich(shortSig(), $("sig-short"), "t-short"));
+$("code-full").addEventListener("click",()=>toggleCode("code-full","html-full",fullSig));
+$("code-short").addEventListener("click",()=>toggleCode("code-short","html-short",shortSig));
+render();
+</script>
+
+</body>
+</html>

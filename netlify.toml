@@ -1,0 +1,43 @@
+# Netlify settings for gempointadvisors.com
+# Plain HTML site: nothing to build, publish the repository as it is.
+[build]
+  publish = "."
+  command = ""
+
+# Short links for print, email and partner materials (query strings such as
+# ?partner=plus-inc are passed through automatically).
+[[redirects]]
+  from = "/ai"
+  to = "/ai-readiness/"
+  status = 301
+
+# Partner short links: each one opens the AI Readiness Check tagged to that partner.
+[[redirects]]
+  from = "/plus"
+  to = "/ai-readiness/?partner=plus-inc"
+  status = 302
+  force = true
+
+[[redirects]]
+  from = "/scorecard"
+  to = "/sales-scorecard/"
+  status = 301
+
+[[redirects]]
+  from = "/kit"
+  to = "/playbook-kit/"
+  status = 301
+
+# Basic security headers on every page.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+# Logos and images rarely change, so let browsers cache them for a week.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /signatures/
+Sitemap: https://gempointadvisors.com/sitemap.xml
