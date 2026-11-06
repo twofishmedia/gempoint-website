@@ -85,9 +85,8 @@ a{color:var(--accent)}
 .tag{font-size:.8rem;border:1px solid var(--line);border-radius:4px;padding:4px 10px;color:var(--muted)}
 
 /* facet progress: one triangle per question */
-.facets{display:flex;gap:6px;margin:14px 0 4px}
-.facets i{width:28px;height:16px;background:var(--line);clip-path:polygon(0 100%,50% 0,100% 100%)}
-.facets i:nth-child(even){clip-path:polygon(0 0,100% 0,50% 100%)}
+.facets{display:flex;gap:6px;margin:14px 0 4px;max-width:420px}
+.facets i{flex:1;height:8px;border-radius:2px;background:var(--line)}
 .facets i.done{background:var(--accent)}
 .facets i.now{background:var(--spark)}
 
