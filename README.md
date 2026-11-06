@@ -31,7 +31,7 @@ Partners get a link to the AI Readiness Check with their code:
 
 `https://gempointadvisors.com/ai-readiness/?partner=plus-inc`
 
-Plus Inc also has a short link for print: `gempointadvisors.com/plus` (set in `netlify.toml`).
+Plus Inc white-labels the assessment: `gempointadvisors.com/plus` is a Plus Inc-branded copy in `plus/index.html`, with its own Netlify form (`plus-inc-ai-readiness`) and a "Partnered with GemPoint Advisors" footer. Set Plus Inc's contact email and booking link in the `CONTACT` settings near the top of its script. Older Plus Inc links (`/ai-readiness/?partner=plus-inc`) redirect there.
 
 Their customers see "Shared with you by <partner>", and every lead records the partner. To add a partner, edit the `PARTNERS` list near the top of the script in `ai-readiness/index.html`, and optionally add a short link for them in `netlify.toml`:
 

@@ -11,12 +11,14 @@
   to = "/ai-readiness/"
   status = 301
 
-# Partner short links: each one opens the AI Readiness Check tagged to that partner.
+# Plus Inc has its own white-label page at /plus/ (plus/index.html).
+# Older Plus Inc links and QR codes (/ai-readiness/?partner=plus-inc) are sent there.
 [[redirects]]
-  from = "/plus"
-  to = "/ai-readiness/?partner=plus-inc"
-  status = 302
+  from = "/ai-readiness/"
+  to = "/plus/"
+  status = 301
   force = true
+  query = {partner = "plus-inc"}
 
 [[redirects]]
   from = "/scorecard"
