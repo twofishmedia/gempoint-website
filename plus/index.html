@@ -301,7 +301,7 @@ function renderIntro(){
     <button class="btn" type="button" id="start">Start the assessment</button>
     <button class="btn ghost" type="button" id="sample">See a sample report</button>
   </div>
-  <p class="fine" style="margin-top:20px">Brought to you by Plus Inc, in partnership with GemPoint Advisors.</p>`;
+  <p class="fine" style="margin-top:20px">A free assessment from Plus Inc Business Solutions.</p>`;
   document.getElementById("start").addEventListener("click",()=>{ state.sample=false; state.step=0; go("q"); });
   document.getElementById("sample").addEventListener("click",()=>{
     state.sample=true; state.ans={...SAMPLE.ans}; state.extra=JSON.parse(JSON.stringify(SAMPLE.extra)); state.contact={...state.contact, company:SAMPLE.company, size:SAMPLE.size}; go("report");
@@ -409,7 +409,7 @@ function renderGate(){
       <button type="button" class="btn ghost" id="gback">Previous</button>
       <button type="submit" class="btn" id="gsend">Show my results</button>
     </div>
-    <p class="fine">Plus Inc and its partner GemPoint Advisors will see your results and may follow up. Your information is never sold.</p>
+    <p class="fine">Plus Inc and its assessment partner will see your results and may follow up. Your information is never sold.</p>
   </form>`;
   document.getElementById("gback").addEventListener("click",()=>{ state.step=TOTAL-1; go("q"); });
   document.getElementById("gf").addEventListener("submit", async e=>{
