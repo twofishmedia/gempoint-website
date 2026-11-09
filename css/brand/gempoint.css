@@ -1,0 +1,28 @@
+/* GemPoint Advisors brand tokens: navy + emerald, technology blue, Source Serif 4 headlines over Inter.
+   Light by default; dark follows the visitor's system setting unless data-theme="light" is set. */
+:root{
+  --bg:#FAFAF7; --surface:#FFFFFF; --tint:#ECF8F2; --ink:#10244A; --muted:#4B5B76; --line:#DCE2EA;
+  --accent:#0A7B57; --accent-deep:#075F43; --accent-soft:#D3F0E3; --on-accent:#FFFFFF;
+  --tech:#2F5E9E; --tech-soft:#E6EDF7;
+  --bad:#B42318; --bad-soft:#FBE7E5; --warn:#A54C08; --warn-soft:#FBEBDD; --good:#0A7B57; --good-soft:#D3F0E3;
+  --cta:#10244A; --on-cta:#FFFFFF; --cta-muted:#C9D2E1; --cta-btn:#3CC08E; --on-cta-btn:#0B1A33; --cta-line:#A8B5CB;
+  --progress-now:#2F5E9E;
+  --display:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --body:Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --heading-weight:600; --heading-tracking:normal; --logo-height:56px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B1A33; --surface:#12254A; --tint:#10302F; --ink:#EEF2F8; --muted:#A8B5CB; --line:#263B63;
+  --accent:#3CC08E; --accent-deep:#6FD1A9; --accent-soft:#1E4A40; --on-accent:#0B1A33;
+  --tech:#7FA6DC; --tech-soft:#1B3562;
+  --bad:#F97066; --bad-soft:#3A1E26; --warn:#F5A524; --warn-soft:#3A2A12; --good:#3CC08E; --good-soft:#1E4A40;
+  --cta:#1B3562; --on-cta:#FFFFFF; --cta-muted:#C9D2E1; --cta-btn:#3CC08E; --on-cta-btn:#0B1A33; --cta-line:#A8B5CB;
+  --progress-now:#7FA6DC; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B1A33; --surface:#12254A; --tint:#10302F; --ink:#EEF2F8; --muted:#A8B5CB; --line:#263B63;
+  --accent:#3CC08E; --accent-deep:#6FD1A9; --accent-soft:#1E4A40; --on-accent:#0B1A33;
+  --tech:#7FA6DC; --tech-soft:#1B3562;
+  --bad:#F97066; --bad-soft:#3A1E26; --warn:#F5A524; --warn-soft:#3A2A12; --good:#3CC08E; --good-soft:#1E4A40;
+  --cta:#1B3562; --on-cta:#FFFFFF; --cta-muted:#C9D2E1; --cta-btn:#3CC08E; --on-cta-btn:#0B1A33; --cta-line:#A8B5CB;
+  --progress-now:#7FA6DC; color-scheme:dark}

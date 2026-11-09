@@ -15,23 +15,8 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
-<style>
-body{margin:0;background:#FAFAF7}
-a{color:#0A7B57}a:hover{color:#075F43}
-</style>
-<style>
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
-img{max-width:100%}
-@media (max-width:480px){
-  [style*="grid-template-columns"]{grid-template-columns:1fr !important}
-  [style*="padding: 96px 24px"],[style*="padding: 88px 24px"]{padding-top:64px !important;padding-bottom:64px !important}
-  [style*="padding: 16px 24px"],[style*="padding: 96px 24px"],[style*="padding: 88px 24px"],[style*="padding: 72px 24px"],[style*="padding: 48px 24px"]{padding-left:16px !important;padding-right:16px !important}
-  [style*="padding: 0 24px 96px"]{padding-left:16px !important;padding-right:16px !important}
-  div:has(> svg[viewBox="0 0 420 340"]){display:none !important}
-}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-</style>
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/css/kit-request.css">
 </head>
 <body>
 <div style="font-family: Inter, system-ui, sans-serif; color: #10244A; background: #FAFAF7; font-size: 16px; line-height: 26px;">
@@ -121,24 +106,62 @@ img{max-width:100%}
 <p style="margin: 0; font-size: 40px; line-height: 44px; font-weight: 700; color: #0A7B57;">$97</p>
 <p style="margin: 0; font-size: 15px; color: #4B5B76;">For founder-led sales and solo sellers.</p>
 <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; flex-grow: 1;"><li>Playbook template</li><li>ICP &amp; persona worksheet</li><li>Sales process map</li><li>Discovery call script</li><li>Objection-handling guide</li><li>AI prompt pack</li></ul>
-<a href="#pricing" style="text-align: center; color: #0A7B57; border: 1px solid #0A7B57; text-decoration: none; padding: 12px 22px; border-radius: 8px; font-weight: 600;">Buy Starter</a>
+<a href="#request" data-kit="Starter" style="text-align: center; color: #0A7B57; border: 1px solid #0A7B57; text-decoration: none; padding: 12px 22px; border-radius: 8px; font-weight: 600;">Request Starter</a>
 </div>
 <div style="background: #10244A; color: #FFFFFF; border-radius: 8px; padding: 32px; display: flex; flex-direction: column; gap: 14px;">
 <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;"><h3 style="margin: 0; font-size: 20px; line-height: 28px; font-weight: 600;">Pro</h3><span style="background: #3CC08E; color: #0B1A33; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 10px; border-radius: 4px;">Most popular</span></div>
 <p style="margin: 0; font-size: 40px; line-height: 44px; font-weight: 700; color: #3CC08E;">$247</p>
 <p style="margin: 0; font-size: 15px; color: #C9D2E1;">For teams of 2–5 sellers.</p>
 <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; flex-grow: 1;"><li>Everything in Starter</li><li>Outbound sequence pack</li><li>Pipeline tracker &amp; KPI dashboard</li><li>Proposal &amp; follow-up templates</li></ul>
-<a href="#pricing" style="text-align: center; background: #3CC08E; color: #0B1A33; text-decoration: none; padding: 12px 22px; border-radius: 8px; font-weight: 600;">Buy Pro</a>
+<a href="#request" data-kit="Pro" style="text-align: center; background: #3CC08E; color: #0B1A33; text-decoration: none; padding: 12px 22px; border-radius: 8px; font-weight: 600;">Request Pro</a>
 </div>
 <div style="border: 1px solid #DCE2EA; border-radius: 8px; padding: 32px; display: flex; flex-direction: column; gap: 14px;">
 <h3 style="margin: 0; font-size: 20px; line-height: 28px; font-weight: 600;">Team</h3>
 <p style="margin: 0; font-size: 40px; line-height: 44px; font-weight: 700; color: #0A7B57;">$497</p>
 <p style="margin: 0; font-size: 15px; color: #4B5B76;">For 5–10 sellers, or teams hiring soon.</p>
 <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; flex-grow: 1;"><li>All 10 tools</li><li>90-day rep onboarding plan</li><li>Sales meeting &amp; 1:1 agendas</li><li>One 45-minute playbook review call with a GemPoint Sales leader</li></ul>
-<a href="#pricing" style="text-align: center; color: #0A7B57; border: 1px solid #0A7B57; text-decoration: none; padding: 12px 22px; border-radius: 8px; font-weight: 600;">Buy Team</a>
+<a href="#request" data-kit="Team" style="text-align: center; color: #0A7B57; border: 1px solid #0A7B57; text-decoration: none; padding: 12px 22px; border-radius: 8px; font-weight: 600;">Request Team</a>
 </div>
 </div>
 <p style="margin: 0; font-size: 15px; color: #4B5B76;">Want help putting it in place? Book a Sales Strategy Intensive and your kit price is credited toward it.</p>
+</div>
+</section>
+
+<section id="request" class="kit-request" aria-labelledby="request-h">
+<div class="kit-request__intro">
+<p class="kit-request__eyebrow">Request the kit</p>
+<h2 id="request-h">Tell us which kit you want.</h2>
+<p class="kit-request__lede">Send a request and GemPoint Sales will email you with next steps for the kit you choose.</p>
+</div>
+<form class="kit-form" name="kit-requests" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+<input type="hidden" name="form-name" value="kit-requests">
+<p class="kit-form__trap" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<label>Name<input type="text" name="name" autocomplete="name" required></label>
+<label>Work email<input type="text" name="email" inputmode="email" autocomplete="email" required></label>
+<label><span>Phone <span class="opt">(optional)</span></span><input type="text" name="phone" inputmode="tel" autocomplete="tel" placeholder="(864) 555-0100"></label>
+<label><span>Company <span class="opt">(optional)</span></span><input type="text" name="company" autocomplete="organization"></label>
+<label>Kit<select name="kit" required>
+<option value="">Choose a kit</option>
+<option value="Starter">Starter ($97)</option>
+<option value="Pro">Pro ($247)</option>
+<option value="Team">Team ($497)</option>
+<option value="Not sure yet">Not sure yet</option>
+</select></label>
+<label><span>Sellers on your team <span class="opt">(optional)</span></span><select name="team_size">
+<option value="">Choose one</option>
+<option>Just me</option>
+<option>2–5</option>
+<option>6–10</option>
+<option>More than 10</option>
+</select></label>
+<label class="wide"><span>Anything we should know? <span class="opt">(optional)</span></span><textarea name="message"></textarea></label>
+<p class="kit-form__error wide" role="alert"></p>
+<button type="submit">Request the kit</button>
+<p class="kit-form__fine wide">GemPoint Sales will use your details only to follow up about the kit. Your information is never sold.</p>
+</form>
+<div class="kit-done" tabindex="-1" hidden>
+<h3>Thanks, <span data-name></span>.</h3>
+<p>Your request is in. GemPoint Sales will email you at <b data-email></b> with next steps.</p>
 </div>
 </section>
 
@@ -167,7 +190,7 @@ img{max-width:100%}
 <p style="margin: 0; max-width: 620px; font-size: 18px; line-height: 29px; color: #C9D2E1;">Get the kit and make it repeatable — or start with the free assessment to see where your gaps are.</p>
 </div>
 <div style="flex: 1 1 260px; display: flex; flex-wrap: wrap; gap: 12px;">
-<a href="#pricing" style="background: #3CC08E; color: #0B1A33; text-decoration: none; padding: 14px 24px; border-radius: 8px; font-weight: 600;">Get the kit</a>
+<a href="#request" style="background: #3CC08E; color: #0B1A33; text-decoration: none; padding: 14px 24px; border-radius: 8px; font-weight: 600;">Request the kit</a>
 <a href="/sales-scorecard/" style="color: #FFFFFF; text-decoration: none; padding: 14px 24px; border-radius: 8px; border: 1px solid #A8B5CB; font-weight: 600;">Free assessment</a>
 </div>
 </div>
@@ -184,6 +207,12 @@ img{max-width:100%}
 <p style="margin: 0; font-size: 13px; width: 100%; border-top: 1px solid #263B63; padding-top: 20px;">© 2026 GemPoint Advisors · The Sales Playbook Kit is a product of GemPoint Sales · Greenville, South Carolina</p>
 </div>
 </footer>
+
+<script type="module">
+import { startKitRequest } from "/js/playbook-kit/request.js";
+
+startKitRequest(document.querySelector("form[name=kit-requests]"), document.querySelector(".kit-done"));
+</script>
 
 </div>
 </body>
