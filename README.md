@@ -19,11 +19,12 @@ Short links: `/ai`, `/scorecard`, `/kit` (set in `netlify.toml`).
 
 ## Leads
 
-The assessments send results to Netlify Forms:
+The assessments and the Playbook Kit page send leads to Netlify Forms:
 
 - `ai-readiness-leads`
 - `plus-inc-ai-readiness`
 - `scorecard-leads`
+- `kit-requests` ("Request the kit" on `/playbook-kit/`, until the kit has a checkout)
 
 Each page also contains a hidden copy of its form, so Netlify registers the form and its fields when the site is deployed.
 Phone numbers are always formatted as (xxx) xxx-xxxx.
@@ -69,6 +70,7 @@ css/
   ai-readiness.css          AI Readiness Check (all brands)
   sales-scorecard.css       Sales Team Scorecard
   signatures.css            email signature builder
+  kit-request.css           "Request the kit" form on the Playbook Kit page
 js/
   lib/                      small helpers: safe HTML text, copying to the clipboard
   forms/                    phone formatting, contact-step checks, sending leads to Netlify
@@ -76,6 +78,7 @@ js/
                             referral codes (partners.js), and one settings file per brand (brands/)
   sales-scorecard/          the Sales Team Scorecard: questions, scoring, the page, settings
   signatures/               the signature builder: signature HTML (templates.js) and the page (app.js)
+  playbook-kit/             the "Request the kit" form (request.js)
 ```
 
 Each page's `index.html` holds its text for search engines, its hidden Netlify form, and a few lines that start its script. The marketing pages keep their layout in their own markup; `404.html` is self-contained on purpose so it always displays.

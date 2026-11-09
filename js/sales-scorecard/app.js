@@ -125,7 +125,7 @@ export function startScorecard(app, settings) {
     byId("gf").addEventListener("submit", async (e) => {
       e.preventDefault();
       const v = (id) => byId(id).value.trim();
-      const checked = checkContact({ name: v("lead-name"), email: v("lead-email"), phone: v("lead-phone") }, "your report");
+      const checked = checkContact({ name: v("lead-name"), email: v("lead-email"), phone: v("lead-phone") }, "Enter your name to see your report.");
       if (checked.error) { byId("gerr").textContent = checked.error; return; }
       state.contact = checked.contact;
       state.intake.company = v("lead-company");

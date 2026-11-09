@@ -1,0 +1,33 @@
+/* "Request the kit" form on the Playbook Kit page. The marketing pages are light-only, so colours are fixed
+   to the light GemPoint palette (navy #10244A, emerald #0A7B57) rather than the dark-aware brand tokens. */
+
+.kit-request{max-width:1200px;margin:0 auto;padding:96px 24px;display:flex;flex-wrap:wrap;gap:48px;scroll-margin-top:24px}
+.kit-request__intro{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:16px}
+.kit-request__eyebrow{margin:0;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#0A7B57}
+.kit-request h2{margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:clamp(30px,4vw,40px);line-height:1.15;color:#10244A}
+.kit-request__lede{margin:0;font-size:18px;line-height:29px;color:#4B5B76}
+
+.kit-form,.kit-done{flex:1 1 420px;min-width:0;background:#FFFFFF;border:1px solid #DCE2EA;border-radius:8px;padding:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;color:#10244A}
+.kit-form .wide{grid-column:1 / -1}
+.kit-form label{display:flex;flex-direction:column;gap:6px;font-size:15px;font-weight:600}
+.kit-form .opt{font-weight:400;color:#4B5B76}
+.kit-form input,.kit-form select,.kit-form textarea{font:inherit;font-size:16px;font-weight:400;color:#10244A;background:#FAFAF7;border:1.5px solid #DCE2EA;border-radius:6px;padding:10px 12px;width:100%;min-height:44px}
+.kit-form textarea{min-height:96px;resize:vertical}
+.kit-form input:focus-visible,.kit-form select:focus-visible,.kit-form textarea:focus-visible,.kit-form button:focus-visible{outline:3px solid #0A7B57;outline-offset:2px}
+.kit-form button{justify-self:start;font:inherit;font-weight:600;font-size:16px;background:#0A7B57;color:#FFFFFF;border:0;border-radius:8px;padding:14px 24px;cursor:pointer;min-height:44px}
+.kit-form button:hover{background:#075F43}
+.kit-form button:disabled{opacity:.6;cursor:wait}
+.kit-form__error{margin:0;color:#B42318;font-size:15px;font-weight:600}
+.kit-form__error:empty{display:none}
+.kit-form__fine{margin:0;font-size:13px;color:#4B5B76}
+.kit-form__trap{position:absolute;left:-9999px}
+
+.kit-done{display:flex;flex-direction:column;gap:12px;align-content:start}
+.kit-form[hidden],.kit-done[hidden]{display:none}
+.kit-done h3{margin:0;font-family:'Source Serif 4',Georgia,serif;font-weight:600;font-size:26px;line-height:1.2}
+.kit-done p{margin:0;font-size:17px;line-height:27px;color:#4B5B76}
+
+@media (max-width:560px){
+  .kit-request{padding:64px 16px;gap:32px}
+  .kit-form{grid-template-columns:1fr;padding:22px}
+}

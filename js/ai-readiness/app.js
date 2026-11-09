@@ -181,7 +181,7 @@ export function startAiReadiness(app, brand) {
     byId("gf").addEventListener("submit", async (e) => {
       e.preventDefault();
       const v = (id) => byId(id).value.trim();
-      const checked = checkContact({ name: v("lead-name"), email: v("lead-email"), phone: v("lead-phone") }, "your results");
+      const checked = checkContact({ name: v("lead-name"), email: v("lead-email"), phone: v("lead-phone") }, "Enter your name to see your results.");
       if (checked.error) { byId("gerr").textContent = checked.error; return; }
       state.contact = { ...checked.contact, company: v("lead-company"), size: v("lead-size") };
       const btn = byId("gsend"); btn.disabled = true; btn.textContent = "Building your report…";
