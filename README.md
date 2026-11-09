@@ -24,7 +24,7 @@ The assessments and the Playbook Kit page send leads to Netlify Forms:
 - `ai-readiness-leads`
 - `plus-inc-ai-readiness`
 - `scorecard-leads`
-- `kit-requests` ("Request the kit" on `/playbook-kit/`, until the kit has a checkout)
+- `kit-requests` ("Questions before you buy?" on `/playbook-kit/`)
 
 Each page also contains a hidden copy of its form, so Netlify registers the form and its fields when the site is deployed.
 Phone numbers are always formatted as (xxx) xxx-xxxx.
@@ -48,6 +48,12 @@ To add another white-label partner:
 1. Copy `js/ai-readiness/brands/plus-inc.js` and change the form name, contact details and wording.
 2. Copy `css/brand/plus-inc.css` and change the colours, fonts and logo height.
 3. Copy `plus/index.html` to a new folder, point it at the two new files and the partner's logo, and rename the hidden form to match.
+
+## Playbook Kit checkout
+
+The Buy buttons on `/playbook-kit/` link straight to Lemon Squeezy, which takes payment, delivers the files and handles
+sales tax. The three checkout links are in the pricing section of `playbook-kit/index.html` (search for `data-checkout`).
+The kit files themselves are uploaded to each product in Lemon Squeezy.
 
 ## Booking links and contact details
 
