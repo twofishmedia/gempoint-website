@@ -11,7 +11,7 @@ import { formatPhoneFieldsAsTyped } from "../forms/phone.js";
 const blankAnswers = () => Object.fromEntries(CATS.map((c) => [c.id, [0, 0, 0, 0]]));
 const blankIntake = () => ({ company: "", size: "", rev: "", lead: "" });
 
-/** settings = { formName, contact: {name, title, email, booking} } */
+/** settings = { formName, contact: {name, title, email, booking, reviewMinutes} } */
 export function startScorecard(app, settings) {
   const contact = settings.contact;
   const state = {
@@ -244,7 +244,7 @@ export function startScorecard(app, settings) {
       <span class="eyebrow" style="color:var(--cta-btn)">Next step</span>
       <h2>Want help closing these gaps?</h2>
       <p>GemPoint Sales puts a seasoned, fractional VP of Sales inside B2B teams to install the process, pipeline discipline, and coaching rhythm this report points to, without a full-time hire.
-      ${state.submitted ? "We have a copy of your results, so a free 30-minute review can start right where this report ends." : "Copy your results and send them over for a free 30-minute review."}</p>
+      ${state.submitted ? `We have a copy of your results, so a free ${contact.reviewMinutes}-minute review can start right where this report ends.` : `Copy your results and send them over for a free ${contact.reviewMinutes}-minute review.`}</p>
       ${contact.email ? `<p class="contact">${esc(contact.email)}</p>` : ""}
       <div class="row">
         ${contact.booking ? `<a class="btn" href="${esc(contact.booking)}" target="_blank" rel="noopener">Book a free review</a>` : ""}

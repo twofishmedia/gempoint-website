@@ -17,7 +17,8 @@ export default {
   contact: {
     name: "GemPoint Technology",
     email: "sales@gempointadvisors.com",
-    booking: "", // add a Calendly or booking link here when you have one
+    booking: "https://calendly.com/friar-gempointadvisors/30min", // a 45-minute meeting, despite the "30min" in the address
+    reviewMinutes: 45,
   },
   progress: "facets",
   partner: () => partnerFromLink(PARTNERS),

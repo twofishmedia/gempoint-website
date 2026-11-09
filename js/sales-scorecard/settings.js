@@ -6,6 +6,7 @@ export default {
     name: "GemPoint Sales",
     title: "the fractional sales leadership practice of GemPoint Advisors",
     email: "sales@gempointadvisors.com",
-    booking: "", // add a Calendly or booking link here when you have one
+    booking: "https://calendly.com/friar-gempointadvisors/30min", // a 45-minute meeting, despite the "30min" in the address
+    reviewMinutes: 45,
   },
 };

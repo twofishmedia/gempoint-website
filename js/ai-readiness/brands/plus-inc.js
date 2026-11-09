@@ -7,6 +7,7 @@ export default {
     name: "Plus Inc",
     email: "",   // Plus Inc's contact email for clients, e.g. "ai@plusinc.net"
     booking: "", // Plus Inc's booking link, if they have one
+    reviewMinutes: 30, // length of the free review Plus Inc offers
   },
   progress: "lines",
   partner: () => ({ code: "plus-inc", name: "Plus Inc" }),

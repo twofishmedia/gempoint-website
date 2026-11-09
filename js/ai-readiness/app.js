@@ -13,7 +13,7 @@ import { formatPhoneFieldsAsTyped } from "../forms/phone.js";
 /**
  * brand = {
  *   formName,                       Netlify form that receives leads
- *   contact: {name, email, booking}, shown on the report; email and booking may be ""
+ *   contact: {name, email, booking, reviewMinutes}, shown on the report; email and booking may be ""
  *   progress: "facets" | "lines",   style of the question progress marks
  *   partner(): {code, name} | null, who referred this visitor
  *   showPartnerBadge,               show "Shared with you by …" on the intro
@@ -315,10 +315,10 @@ export function startAiReadiness(app, brand) {
       <span class="eyebrow">Next step</span>
       <h2>Want a second opinion on your plan?</h2>
       <p>${esc(brand.text.ctaBody(state.partner))}
-      ${state.submitted ? " We have a copy of your answers, so a free 30-minute review can start right where this report ends." : ""}</p>
+      ${state.submitted ? ` We have a copy of your answers, so a free ${contact.reviewMinutes}-minute review can start right where this report ends.` : ""}</p>
       ${contact.email ? `<p style="user-select:all;font-weight:600;color:var(--on-cta)">${esc(contact.email)}</p>` : ""}
       <div class="row">
-        ${contact.booking ? `<a class="btn" href="${esc(contact.booking)}" target="_blank" rel="noopener" style="text-decoration:none">Book a free AI review</a>` : ""}
+        ${contact.booking ? `<a class="btn" href="${esc(contact.booking)}" target="_blank" rel="noopener">Book a free AI review</a>` : ""}
         <button class="btn ${contact.booking ? "ghost" : ""}" type="button" id="copysum">Copy my results</button>
         <button class="btn ghost" type="button" id="retake">${state.sample ? "Take the assessment" : "Retake"}</button>
       </div>
