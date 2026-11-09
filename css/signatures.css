@@ -1,0 +1,43 @@
+/* Email signature builder: details form on the left, live signature previews on white "email" cards on the right; stacks on phones.
+   Colours and fonts come from css/brand/gempoint.css, loaded before this file. */
+
+/* Page-only tokens: the preview "email" stays white in dark mode, like a real inbox. */
+:root{--mail:#FFFFFF; --mail-line:#DCE2EA}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--mail:#FFFFFF; --mail-line:#263B63}}
+:root[data-theme="dark"]{--mail:#FFFFFF; --mail-line:#263B63}
+
+[hidden]{display:none!important}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding-block:32px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:28px}
+header{display:flex;flex-direction:column;gap:8px;padding-bottom:20px;border-bottom:2px solid var(--accent)}
+.eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1,h2{margin:0;font-family:var(--display);font-weight:600;text-wrap:balance;line-height:1.15}
+h1{font-size:clamp(1.9rem,4.5vw,2.6rem)} h2{font-size:1.35rem}
+p{margin:0}
+.muted{color:var(--muted)}
+.layout{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+.form{flex:1 1 320px;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:14px}
+.previews{flex:999 1 520px;min-width:0;display:flex;flex-direction:column;gap:24px}
+label.f{display:flex;flex-direction:column;gap:5px;font-weight:600;font-size:.9rem}
+input[type=text],select{font:inherit;font-weight:400;padding:10px 12px;border:1.5px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);width:100%;min-height:44px}
+input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.hint{font-size:.82rem;color:var(--muted);font-weight:400}
+.seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.seg button{font:inherit;font-size:.88rem;font-weight:600;padding:10px 6px;border:1.5px solid var(--line);border-radius:4px;background:var(--bg);color:var(--ink);cursor:pointer;min-height:44px}
+.seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.cardhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.mail{background:var(--mail);border:1px solid var(--mail-line);border-radius:4px;padding:22px;overflow-x:auto}
+.mail .fake{font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#4B5B76;margin-bottom:16px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{font:inherit;font-weight:600;font-size:.95rem;background:var(--accent);color:var(--on-accent);border:0;border-radius:8px;padding:11px 18px;cursor:pointer;min-height:44px}
+.btn:hover{background:var(--accent-deep)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.toast{font-size:.88rem;color:var(--accent);min-height:1.3em}
+.code{width:100%;min-height:140px;font:12px/1.45 ui-monospace,Menlo,Consolas,monospace;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:4px;padding:10px}
+.steps{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.note{background:var(--warn-soft);color:var(--ink);border-radius:4px;padding:12px 14px;font-size:.9rem}
+.note b{color:var(--warn)}
+.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.howto .card h3{margin:0;font-size:1rem}

@@ -1,0 +1,26 @@
+/* Plus Inc brand tokens (white-label pages): cobalt + yellow, Inter throughout. */
+:root{
+  --bg:#FFFFFF; --surface:#FFFFFF; --tint:#F1F3FB; --ink:#111322; --muted:#4A4F63; --line:#D9D9D9;
+  --accent:#0D2180; --accent-deep:#09185E; --accent-soft:#E1E6F7; --on-accent:#FFFFFF;
+  --tech:#0D2180; --tech-soft:#E8EBF8;
+  --bad:#B42318; --bad-soft:#FBE7E5; --warn:#A54C08; --warn-soft:#FBEBDD; --good:#1B7F4B; --good-soft:#DDF2E6;
+  --cta:#0D2180; --on-cta:#FFFFFF; --cta-muted:#D2D8F2; --cta-btn:#F9CC33; --on-cta-btn:#0D2180; --cta-line:#8C98D6;
+  --progress-now:#F9CC33;
+  --display:Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body:Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --heading-weight:700; --heading-tracking:-.015em; --logo-height:40px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#080E33; --surface:#111A4D; --tint:#18225E; --ink:#F2F4FB; --muted:#B5BCDB; --line:#2B3675;
+  --accent:#F9CC33; --accent-deep:#FBD95C; --accent-soft:#2A3577; --on-accent:#0D2180;
+  --tech:#F9CC33; --tech-soft:#1E2968;
+  --bad:#F97066; --bad-soft:#3A1E26; --warn:#F5A524; --warn-soft:#3A2A12; --good:#4CC38A; --good-soft:#163B33;
+  --cta:#0D2180; --on-cta:#FFFFFF; --cta-muted:#D2D8F2; --cta-btn:#F9CC33; --on-cta-btn:#0D2180; --cta-line:#8C98D6;
+  --progress-now:#F9CC33; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#080E33; --surface:#111A4D; --tint:#18225E; --ink:#F2F4FB; --muted:#B5BCDB; --line:#2B3675;
+  --accent:#F9CC33; --accent-deep:#FBD95C; --accent-soft:#2A3577; --on-accent:#0D2180;
+  --tech:#F9CC33; --tech-soft:#1E2968;
+  --bad:#F97066; --bad-soft:#3A1E26; --warn:#F5A524; --warn-soft:#3A2A12; --good:#4CC38A; --good-soft:#163B33;
+  --cta:#0D2180; --on-cta:#FFFFFF; --cta-muted:#D2D8F2; --cta-btn:#F9CC33; --on-cta-btn:#0D2180; --cta-line:#8C98D6;
+  --progress-now:#F9CC33; color-scheme:dark}
