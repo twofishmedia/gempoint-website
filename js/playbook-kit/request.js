@@ -1,5 +1,5 @@
-// The "Request the kit" form on the Playbook Kit page. The form works without JavaScript (Netlify takes the
-// post directly); this adds phone formatting, friendly checks, the "Request <kit>" buttons and an in-page thank-you.
+// The "Questions before you buy?" form on the Playbook Kit page. The form works without JavaScript (Netlify takes
+// the post directly); this adds phone formatting, friendly checks and an in-page thank-you.
 
 import { checkContact } from "../forms/contact.js";
 import { submitNetlifyForm } from "../forms/netlify.js";
@@ -7,19 +7,13 @@ import { formatPhoneFieldsAsTyped } from "../forms/phone.js";
 
 const FIELDS = ["name", "email", "phone", "company", "team_size", "kit", "message"];
 
-/** form: the <form name="kit-requests">; done: the element shown after a request is sent. */
-export function startKitRequest(form, done) {
+/** form: the <form name="kit-requests">; done: the element shown after a question is sent. */
+export function startKitQuestions(form, done) {
   const error = form.querySelector(".kit-form__error");
   const button = form.querySelector("button[type=submit]");
   const value = (name) => form.elements[name].value.trim();
 
   formatPhoneFieldsAsTyped(form);
-
-  // "Request Starter" etc. jump to the form with that kit already chosen.
-  document.querySelectorAll("a[data-kit]").forEach((link) => link.addEventListener("click", () => {
-    form.elements.kit.value = link.dataset.kit;
-    setTimeout(() => form.elements.name.focus({ preventScroll: true }), 0);
-  }));
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -36,8 +30,8 @@ export function startKitRequest(form, done) {
       await submitNetlifyForm(form.getAttribute("name"), fields);
     } catch (_) {
       button.disabled = false;
-      button.textContent = "Request the kit";
-      error.textContent = "Your request didn't go through. Try again, or email sales@gempointadvisors.com.";
+      button.textContent = "Send my question";
+      error.textContent = "Your question didn't go through. Try again, or email sales@gempointadvisors.com.";
       return;
     }
     done.querySelector("[data-name]").textContent = fields.name.split(" ")[0];
