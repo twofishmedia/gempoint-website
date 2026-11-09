@@ -206,5 +206,22 @@ $("code-short").addEventListener("click",()=>toggleCode("code-short","html-short
 render();
 </script>
 
+<script>
+/* Phone fields (autocomplete="tel"): format as (xxx) xxx-xxxx while typing or pasting. */
+(function(){
+  function digits(v){ var d=String(v||"").replace(/\D/g,""); if(d.length===11&&d.charAt(0)==="1") d=d.slice(1); return d.slice(0,10); }
+  function fmt(v){ var d=digits(v); if(!d) return "";
+    if(d.length<4) return "("+d; if(d.length<7) return "("+d.slice(0,3)+") "+d.slice(3);
+    return "("+d.slice(0,3)+") "+d.slice(3,6)+"-"+d.slice(6); }
+  window.phoneDigits=digits; window.formatPhone=fmt;
+  document.addEventListener("input",function(e){
+    var t=e.target; if(!t||t.getAttribute("autocomplete")!=="tel") return;
+    var before=t.value.slice(0,t.selectionStart||0).replace(/\D/g,"").length;
+    var f=fmt(t.value); if(f===t.value) return; t.value=f;
+    var pos=0,seen=0; while(pos<f.length&&seen<before){ if(/\d/.test(f.charAt(pos))) seen++; pos++; }
+    try{ t.setSelectionRange(pos,pos); }catch(_){}
+  });
+})();
+</script>
 </body>
 </html>

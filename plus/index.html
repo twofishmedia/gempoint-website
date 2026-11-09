@@ -417,7 +417,8 @@ function renderGate(){
     const err = document.getElementById("gerr");
     if(!v("lead-name")){ err.textContent="Enter your name to see your results."; return; }
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v("lead-email"))){ err.textContent="Enter a valid email address, like you@company.com."; return; }
-    state.contact = {name:v("lead-name"), email:v("lead-email"), phone:v("lead-phone"), company:v("lead-company"), size:v("lead-size")};
+    if(v("lead-phone") && phoneDigits(v("lead-phone")).length!==10){ err.textContent="Enter a 10-digit phone number, like (864) 555-0100, or leave it blank."; return; }
+    state.contact = {name:v("lead-name"), email:v("lead-email"), phone:formatPhone(v("lead-phone")), company:v("lead-company"), size:v("lead-size")};
     const btn = document.getElementById("gsend"); btn.disabled=true; btn.textContent="Building your report…";
     try { await sendLead(); state.submitted=true; } catch(x){ state.submitted=false; }
     state.sample=false; go("report");
@@ -572,6 +573,23 @@ function renderReport(){
 }
 
 render();
+</script>
+<script>
+/* Phone fields (autocomplete="tel"): format as (xxx) xxx-xxxx while typing or pasting. */
+(function(){
+  function digits(v){ var d=String(v||"").replace(/\D/g,""); if(d.length===11&&d.charAt(0)==="1") d=d.slice(1); return d.slice(0,10); }
+  function fmt(v){ var d=digits(v); if(!d) return "";
+    if(d.length<4) return "("+d; if(d.length<7) return "("+d.slice(0,3)+") "+d.slice(3);
+    return "("+d.slice(0,3)+") "+d.slice(3,6)+"-"+d.slice(6); }
+  window.phoneDigits=digits; window.formatPhone=fmt;
+  document.addEventListener("input",function(e){
+    var t=e.target; if(!t||t.getAttribute("autocomplete")!=="tel") return;
+    var before=t.value.slice(0,t.selectionStart||0).replace(/\D/g,"").length;
+    var f=fmt(t.value); if(f===t.value) return; t.value=f;
+    var pos=0,seen=0; while(pos<f.length&&seen<before){ if(/\d/.test(f.charAt(pos))) seen++; pos++; }
+    try{ t.setSelectionRange(pos,pos); }catch(_){}
+  });
+})();
 </script>
 </body>
 </html>
