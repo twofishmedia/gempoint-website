@@ -17,6 +17,8 @@ The GemPoint Advisors website. Plain HTML, CSS and JavaScript modules, no build 
 
 Short links: `/ai`, `/scorecard`, `/kit` (set in `netlify.toml`).
 
+Booking links: `/meet-with-friar` sends visitors to Friar's Google booking page (set in `netlify.toml`). Add `/meet-with-natalie` the same way when Natalie has a booking page. Everything links to these, never to the booking tool directly, so switching tools is a one-line change.
+
 ## Leads
 
 The assessments and the Playbook Kit page send leads to Netlify Forms:

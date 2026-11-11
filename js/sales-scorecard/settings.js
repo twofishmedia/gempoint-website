@@ -6,7 +6,7 @@ export default {
     name: "GemPoint Sales",
     title: "the fractional sales leadership practice of GemPoint Advisors",
     email: "sales@gempointadvisors.com",
-    booking: "https://calendar.app.google/uAdSdYZCHj5WHTkj8", // a 45-minute meeting
+    booking: "https://gempointadvisors.com/meet-with-friar", // a 45-minute meeting
     reviewMinutes: 45,
   },
 };

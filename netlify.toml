@@ -30,6 +30,13 @@
   to = "/playbook-kit/"
   status = 301
 
+# Booking links: one per Partner, so the booking tool behind them can change
+# without touching the site, kits or signatures. 302 because the target may change.
+[[redirects]]
+  from = "/meet-with-friar"
+  to = "https://calendar.app.google/uAdSdYZCHj5WHTkj8"
+  status = 302
+
 # Basic security headers on every page.
 [[headers]]
   for = "/*"
