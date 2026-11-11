@@ -17,7 +17,7 @@ export default {
   contact: {
     name: "GemPoint Technology",
     email: "sales@gempointadvisors.com",
-    booking: "https://gempointadvisors.com/meet-with-friar", // a 45-minute meeting
+    booking: "https://calendly.com/friar-gempointadvisors/meet-with-friar", // a 45-minute meeting
     reviewMinutes: 45,
   },
   progress: "facets",
