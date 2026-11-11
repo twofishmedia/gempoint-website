@@ -14,12 +14,22 @@ import { formatPhoneFieldsAsTyped } from "../forms/phone.js";
  * brand = {
  *   formName,                       Netlify form that receives leads
  *   contact: {name, email, booking, reviewMinutes}, shown on the report; email and booking may be ""
+ *                                   (booking "" → the report's button emails `email` to ask for a review)
  *   progress: "facets" | "lines",   style of the question progress marks
  *   partner(): {code, name} | null, who referred this visitor
  *   showPartnerBadge,               show "Shared with you by …" on the intro
  *   text: { introFooter, gateNotice(partner), ctaBody(partner) }   plain text, escaped here
  * }
  */
+// The report's main button: the booking page if there is one, otherwise an email asking for a review.
+function reviewAction({ booking, email, reviewMinutes }) {
+  if (booking) return { href: booking, label: "Book a free AI review", external: true };
+  if (!email) return null;
+  const subject = `Free ${reviewMinutes}-minute AI review`;
+  const body = "Hi, I just finished the AI Readiness Check and would like to book a free review of my results.";
+  return { href: `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, label: "Email us to book a review", external: false };
+}
+
 export function startAiReadiness(app, brand) {
   const state = {
     view: "intro", step: 0, ans: {}, extra: blankExtra(), sample: false,
@@ -28,6 +38,7 @@ export function startAiReadiness(app, brand) {
     submitted: false,
   };
   const contact = brand.contact;
+  const action = reviewAction(contact);
   const byId = (id) => document.getElementById(id);
 
   function go(view) { state.view = view; render(); window.scrollTo(0, 0); }
@@ -318,8 +329,8 @@ export function startAiReadiness(app, brand) {
       ${state.submitted ? ` We have a copy of your answers, so a free ${contact.reviewMinutes}-minute review can start right where this report ends.` : ""}</p>
       ${contact.email ? `<p style="user-select:all;font-weight:600;color:var(--on-cta)">${esc(contact.email)}</p>` : ""}
       <div class="row">
-        ${contact.booking ? `<a class="btn" href="${esc(contact.booking)}" target="_blank" rel="noopener">Book a free AI review</a>` : ""}
-        <button class="btn ${contact.booking ? "ghost" : ""}" type="button" id="copysum">Copy my results</button>
+        ${action ? `<a class="btn" href="${esc(action.href)}"${action.external ? ' target="_blank" rel="noopener"' : ""}>${action.label}</a>` : ""}
+        <button class="btn ${action ? "ghost" : ""}" type="button" id="copysum">Copy my results</button>
         <button class="btn ghost" type="button" id="retake">${state.sample ? "Take the assessment" : "Retake"}</button>
       </div>
       <p class="toast" id="stoast" role="status" style="color:var(--cta-btn)"></p>
