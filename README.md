@@ -58,7 +58,7 @@ The Sales Playbook Kit is sold through Payhip, which takes payment and emails th
 | --- | --- | --- |
 | Starter | $147 | `jwEJF` |
 | Pro | $297 | `23hiP` |
-| Team | $547 | `92YRq` |
+| Team | $497 | `92YRq` |
 
 To change a price, change it in Payhip first, then on `/playbook-kit/` (and "From $…" on `/sales/`). The kit files are uploaded to each Payhip product.
 
