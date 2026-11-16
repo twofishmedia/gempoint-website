@@ -26,7 +26,6 @@ The assessments and the Playbook Kit page send leads to Netlify Forms:
 - `ai-readiness-leads`
 - `plus-inc-ai-readiness`
 - `scorecard-leads`
-- `kit-requests` ("Request the kit" on `/playbook-kit/`, until the kit has a checkout)
 
 Each page also contains a hidden copy of its form, so Netlify registers the form and its fields when the site is deployed.
 Phone numbers are always formatted as (xxx) xxx-xxxx.
@@ -51,6 +50,18 @@ To add another white-label partner:
 2. Copy `css/brand/plus-inc.css` and change the colours, fonts and logo height.
 3. Copy `plus/index.html` to a new folder, point it at the two new files and the partner's logo, and rename the hidden form to match.
 
+## Playbook Kit checkout
+
+The Sales Playbook Kit is sold through Payhip, which takes payment and emails the buyer the kit's zip. Each tier's "Buy" button on `/playbook-kit/` is a Payhip embed button (`payhip.js` opens the checkout over the page; without JavaScript the link opens the Payhip product page):
+
+| Tier | Price | Payhip product |
+| --- | --- | --- |
+| Starter | $147 | `jwEJF` |
+| Pro | $297 | `23hiP` |
+| Team | $547 | `92YRq` |
+
+To change a price, change it in Payhip first, then on `/playbook-kit/` (and "From $…" on `/sales/`). The kit files are uploaded to each Payhip product.
+
 ## Booking links and contact details
 
 Each assessment's contact details (name, email, booking link) are in its settings file:
@@ -72,7 +83,6 @@ css/
   ai-readiness.css          AI Readiness Check (all brands)
   sales-scorecard.css       Sales Team Scorecard
   signatures.css            email signature builder
-  kit-request.css           "Request the kit" form on the Playbook Kit page
 js/
   lib/                      small helpers: safe HTML text, copying to the clipboard
   forms/                    phone formatting, contact-step checks, sending leads to Netlify
@@ -80,7 +90,6 @@ js/
                             referral codes (partners.js), and one settings file per brand (brands/)
   sales-scorecard/          the Sales Team Scorecard: questions, scoring, the page, settings
   signatures/               the signature builder: signature HTML (templates.js) and the page (app.js)
-  playbook-kit/             the "Request the kit" form (request.js)
 ```
 
 Each page's `index.html` holds its text for search engines, its hidden Netlify form, and a few lines that start its script. The marketing pages keep their layout in their own markup; `404.html` is self-contained on purpose so it always displays.
