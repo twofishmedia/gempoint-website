@@ -19,7 +19,7 @@ export function startSignatureBuilder() {
     const v = (id) => $(id).value.trim();
     return {
       name: v("f-name") || "Your Name", title: v("f-title") || "Managing Partner",
-      phone: v("f-phone"), email: v("f-email"), web: v("f-web"), book: v("f-book"), logo: v("f-logo"),
+      phone: v("f-phone"), email: v("f-email"), web: v("f-web"), linkedin: v("f-linkedin"), book: v("f-book"), logo: v("f-logo"),
     };
   }
   const full = () => fullSignature(details(), practice);

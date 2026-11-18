@@ -24,13 +24,17 @@ function contactLines(d, color) {
   const lines = [];
   if (d.phone) lines.push(`<a href="${esc(telHref(d.phone))}" style="${F}color:#10244A;text-decoration:none;">${esc(d.phone)}</a>`);
   if (d.email) lines.push(`<a href="mailto:${esc(d.email)}" style="${F}color:#10244A;text-decoration:none;">${esc(d.email)}</a>`);
-  if (d.web) lines.push(`<a href="${esc(urlify(d.web))}" style="${F}color:${color};text-decoration:none;font-weight:bold;">${esc(bare(d.web))}</a>`);
+  const links = [
+    d.web ? `<a href="${esc(urlify(d.web))}" style="${F}color:${color};text-decoration:none;font-weight:bold;">${esc(bare(d.web))}</a>` : "",
+    d.linkedin ? `<a href="${esc(urlify(d.linkedin))}" style="${F}color:${color};text-decoration:none;font-weight:bold;">LinkedIn</a>` : "",
+  ].filter(Boolean);
+  if (links.length) lines.push(links.join(`<span style="${F}color:#A8B5CB;"> | </span>`));
   return lines;
 }
 
 /**
  * The full signature for new emails.
- * d = {name, title, phone, email, web, book, logo}; practice = "adv" | "sales" | "tech".
+ * d = {name, title, phone, email, web, linkedin, book, logo}; practice = "adv" | "sales" | "tech".
  */
 export function fullSignature(d, practice) {
   const p = PRACTICES[practice];
@@ -53,6 +57,7 @@ export function shortSignature(d, practice) {
   const bits = [
     d.phone ? `<a href="${esc(telHref(d.phone))}" style="${F}color:#4B5B76;text-decoration:none;">${esc(d.phone)}</a>` : "",
     d.web ? `<a href="${esc(urlify(d.web))}" style="${F}color:${p.color};text-decoration:none;font-weight:bold;">${esc(bare(d.web))}</a>` : "",
+    d.linkedin ? `<a href="${esc(urlify(d.linkedin))}" style="${F}color:${p.color};text-decoration:none;font-weight:bold;">LinkedIn</a>` : "",
   ].filter(Boolean);
   return `<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;${F}"><tr>
 <td style="${F}font-size:13px;line-height:19px;color:#10244A;"><span style="font-weight:bold;">${esc(d.name)}</span> <span style="color:#4B5B76;">· ${esc(p.label)}</span>${bits.length ? `<br>${bits.join(`<span style="color:#A8B5CB;"> | </span>`)}` : ""}</td>
